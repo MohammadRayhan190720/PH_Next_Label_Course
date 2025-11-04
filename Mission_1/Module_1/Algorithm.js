@@ -40,3 +40,72 @@ console.time('findEl')
 //order of notation O(1)
 const userFind = secondArrayUser[40000];
 console.timeEnd('findEl')
+
+//set
+
+const set = new Set();
+
+set.add('mango')
+set.add('apple')
+set.add('banana')
+set.add('mango') //duplicate will not be added
+
+console.log(set)
+console.log(set.size)
+
+set.delete('banana')
+console.log(set)
+
+//array ar modde set use
+
+const arr = ['cat', 'dog', 'fish', 'cat', 'dog'];
+
+const set1 = new Set(arr);
+
+//new element add
+set1.add('hamster');
+
+//iteration ar jonno forEach method ace only
+
+const elements = set1.forEach( (item) =>{console.log(item)})
+console.log(elements);
+
+//set to array
+const arrFromSet = Array.from(set1);
+console.log(arrFromSet)
+
+//check if have
+console.log( set1.has('dog') ) //true
+console.log( set1.has('lion') ) //false
+
+console.log(set1)
+
+//brute force vs optimized approach
+const pet = ["cat", "dog", "fish", "cat", "dog"];
+
+//brute force
+
+console.time('bruteForce')
+
+const removeDuplicatePets = (pet) =>{
+  const uniquePets = [];
+  pet.forEach((item) =>{
+    if(!uniquePets.includes(item)){
+      uniquePets.push(item);
+    }
+  })
+  return uniquePets;
+}
+
+console.log(removeDuplicatePets(pet))
+console.timeEnd('bruteForce')
+
+//optimized approach using set
+console.time('optimizedSet')
+
+const removeDuplicatePetSet = (pet) =>{
+  const uniquePetSet = new Set(pet);
+  return Array.from(uniquePetSet);
+}
+console.log(removeDuplicatePetSet(pet))
+console.timeEnd('optimizedSet')
