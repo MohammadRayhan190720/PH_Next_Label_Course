@@ -1,4 +1,4 @@
-    class Parent {
+    class Person  {
       name: string;
       age: number;
       address: string;
@@ -18,7 +18,7 @@
   
   
   
-  class Student extends Parent  {
+  class Student extends Person  {
     roll:number;
     constructor(name:string, age:number,address:string,roll:number){
       super(name,age,address)
@@ -31,7 +31,7 @@
 student1.getSleep(7)
 
 
-  class Teacher extends Parent {
+  class Teacher extends Person {
 
     designation: string;
 
