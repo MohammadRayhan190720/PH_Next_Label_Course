@@ -1,3 +1,11 @@
+const obj = {
+  nextLabel : { courseID: "Level-2"},
+  "Programming Hero" : { courseID: "Level-1"},
+}
+console.log(obj["Programming Hero"].courseID);
+console.log(obj.nextLabel)
+
+
 const course1 = {name : "Programming Hero"};
 const course2 = { name: "next level web development" };
 
